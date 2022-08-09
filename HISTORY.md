@@ -2,6 +2,10 @@
 
 v1.0.2 (2022-08-09)
 
+- Fix bad LICENSE reference.
+
+- v1.0.2 (2022-08-09)
+
 - Add unit tests.
 
 v1.0.1 (2022-08-09)

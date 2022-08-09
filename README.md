@@ -1,6 +1,6 @@
 # Organizer
 
-[![License](https://img.shields.io/pypi/l/organizer)](https://github.com/fujiawei-dev/organizer/blob/master/LICENSE)
+[![License](https://img.shields.io/pypi/l/organizer)](https://github.com/fujiawei-dev/organizer/blob/main/LICENSE)
 
 [![Python Test](https://github.com/fujiawei-dev/organizer/actions/workflows/python-test.yml/badge.svg)](https://github.com/fujiawei-dev/organizer/actions/workflows/python-test.yml)
 
