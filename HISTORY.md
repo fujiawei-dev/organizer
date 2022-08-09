@@ -1,6 +1,6 @@
 # History
 
-v1.0.2 (2022-08-09)
+v1.0.3 (2022-08-09)
 
 - Fix bad LICENSE reference.
 
