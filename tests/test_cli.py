@@ -2,15 +2,17 @@
 
 from click.testing import CliRunner
 
-from organizer import cli
+from organizer import __version__, cli
 
 
 def test_command_line_interface():
     """Test the CLI."""
     runner = CliRunner()
-    result = runner.invoke(cli.main)
-    assert result.exit_code == 0
-    assert "organizer.cli.main" in result.output
+
+    version_result = runner.invoke(cli.main, ["--version"])
+    assert version_result.exit_code == 0
+    assert version_result.stdout.strip() == __version__
+
     help_result = runner.invoke(cli.main, ["--help"])
     assert help_result.exit_code == 0
-    assert "--help  Show this message and exit." in help_result.output
+    assert "Organize your TV Shows." in help_result.stdout

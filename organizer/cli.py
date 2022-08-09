@@ -6,10 +6,9 @@ import click
 from toolkit.config.runtime import EDITOR
 
 from organizer import __version__
+from organizer.config import DEFAULT_CONFIG_FILE
 from organizer.config.settings import Settings
 from organizer.runner.carry import carry_tv
-
-DEFAULT_CONFIG_FILE = "~/.config/organizer/config.yaml"
 
 
 @click.command(help="Organize your TV Shows.")
