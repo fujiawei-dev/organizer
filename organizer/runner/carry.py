@@ -65,14 +65,17 @@ def generate_tv_video_path(
 
     name = os.path.join(season, f"{episode}{suffix}")
 
-    if os.path.exists(name):
-        if os.path.getsize(item) > os.path.getsize(name) + 1024 * 1024 * 100:
-            log.debug("%s is larger than %s" % (item, name))
-            dry_run_or_unlink(name, dry_run)
-        else:
-            log.debug("%s is smaller than %s, skipped" % (item, name))
-            dry_run_or_unlink(item, dry_run)
-            return
+    for video_suffix in ignore.video_file_suffixes:
+        file = os.path.join(season, f"{episode}{video_suffix}")
+
+        if os.path.exists(file):
+            if os.path.getsize(item) > os.path.getsize(file) + 1024 * 1024 * 100:
+                log.debug("%s is larger than %s" % (item, file))
+                dry_run_or_unlink(file, dry_run)
+            else:
+                log.debug("%s is smaller than %s, skipped" % (item, file))
+                dry_run_or_unlink(item, dry_run)
+                return
 
     return name
 

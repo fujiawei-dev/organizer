@@ -1,5 +1,11 @@
 # History
 
+v1.0.4 (2022-08-14)
+
+- Fixed
+    - retry on failed request
+    - check the same stem (with different suffixes), not only the same name
+
 v1.0.3 (2022-08-09)
 
 - Fix bad LICENSE reference.
