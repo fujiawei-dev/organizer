@@ -1,5 +1,9 @@
 # History
 
+v1.0.5 (2022-08-20)
+
+- Added support for opening directory.
+
 v1.0.4 (2022-08-14)
 
 - Fixed

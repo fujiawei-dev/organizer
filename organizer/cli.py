@@ -21,7 +21,25 @@ from organizer.runner.carry import carry_tv
     help="Path to the config file.",
 )
 @click.option("--edit-config-file", "-e", is_flag=True, help="Edit the config file.")
-def main(version: bool, config_file: str, edit_config_file: bool):
+@click.option(
+    "--open-source-directory",
+    "-s",
+    is_flag=True,
+    help="Open the source directory.",
+)
+@click.option(
+    "--open-destination-directory",
+    "-d",
+    is_flag=True,
+    help="Open the destination directory.",
+)
+def main(
+    version: bool,
+    config_file: str,
+    edit_config_file: bool,
+    open_source_directory: bool,
+    open_destination_directory: bool,
+):
     if version:
         click.echo(__version__)
         return
@@ -34,6 +52,16 @@ def main(version: bool, config_file: str, edit_config_file: bool):
         return
 
     settings = Settings(config_file=config_file)
+
+    if open_source_directory:
+        click.echo('Opening "{}"'.format(settings.src))
+        click.launch(settings.src, locate=True)
+        return
+
+    if open_destination_directory:
+        click.echo('Opening "{}"'.format(settings.dst))
+        click.launch(settings.dst, locate=True)
+        return
 
     carry_tv(
         settings.src,
